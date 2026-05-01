@@ -1,0 +1,24 @@
+:root {
+  --color-space: #0a0c18;
+  --color-space-glow: #1c203c;
+  --color-surface: rgba(255, 255, 255, 0.024);
+  --color-hairline: rgba(255, 255, 255, 0.08);
+  --color-hairline-strong: rgba(255, 255, 255, 0.18);
+  --color-text: #e9e7e0;
+  --color-text-dim: #8d8a9c;
+  --color-gold: #d4af6e;
+  --color-gold-soft: rgba(212, 175, 110, 0.4);
+  --color-gold-faint: rgba(212, 175, 110, 0.1);
+  --color-danger: #e06c75;
+  --color-warn: #e5c07b;
+
+  --text-base: clamp(0.92rem, 0.88rem + 0.2vw, 1rem);
+
+  --space-section: clamp(1.4rem, 1rem + 2vw, 2.5rem);
+  --radius-panel: 18px;
+  --radius-chip: 999px;
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
