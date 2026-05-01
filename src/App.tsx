@@ -74,3 +74,32 @@ export default function App() {
           : u,
       ),
     );
+
+  const handleDownload = async () => {
+    setExportError(null);
+    try {
+      await downloadScenePng(scene, traitColors, traitsByName);
+    } catch (err) {
+      setExportError(err instanceof Error ? err.message : 'PNG export failed.');
+    }
+  };
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setLinkCopied(true);
+      window.setTimeout(() => setLinkCopied(false), 2000);
+    } catch {
+      setExportError('Couldn’t access the clipboard — copy the URL from the address bar.');
+    }
+  };
+
+  const pickerUnit = pickerFor ? units.find((u) => u.apiName === pickerFor) : undefined;
+  const pickerChampion = pickerFor ? championsByApiName.get(pickerFor) : undefined;
+
+  return (
+    <div className="app">
+      <header className="app-header">
+        <h1 className="app-title">Traitweb</h1>
+        <span className="app-set">Set {data.setNumber}</span>
+      </header>
