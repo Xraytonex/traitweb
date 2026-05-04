@@ -103,3 +103,90 @@ export default function App() {
         <h1 className="app-title">Traitweb</h1>
         <span className="app-set">Set {data.setNumber}</span>
       </header>
+
+      <main className="app-main">
+        <section className="panel" aria-label="Team input">
+          <CodeInput data={data} onLoad={loadUnits} />
+          <ChampionPicker
+            champions={data.champions}
+            pickedApiNames={new Set(units.map((u) => u.apiName))}
+            onAdd={addUnit}
+          />
+        </section>
+
+        {units.length > 0 && (
+          <section className="panel" aria-label="Units and emblems">
+            <UnitRow
+              units={units}
+              championsByApiName={championsByApiName}
+              traitsByName={traitsByName}
+              traitColors={traitColors}
+              onOpenPicker={setPickerFor}
+              onRemoveUnit={removeUnit}
+              onRemoveEmblem={toggleEmblem}
+            />
+            <p className="hint-text">Click a unit to assign emblems; click a chip to remove it.</p>
+          </section>
+        )}
+
+        <section className="panel" aria-label="Trait web">
+          {units.length > 0 ? (
+            <>
+              <TraitWeb scene={scene} traitColors={traitColors} traitsByName={traitsByName} />
+              {scene.edges.length === 0 && (
+                <p className="hint-text" style={{ textAlign: 'center' }}>
+                  No shared traits yet — add more units or attach emblems to weave the web.
+                </p>
+              )}
+              {scene.webTraits.length > 0 && (
+                <ul className="web-legend" aria-label="Traits in this web">
+                  {scene.webTraits.map((name) => (
+                    <li key={name}>
+                      <span
+                        className="legend-dot"
+                        style={{
+                          background: (traitColors.get(name) ?? FALLBACK_TRAIT_COLOR).line,
+                        }}
+                      />
+                      {name}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <div className="web-toolbar">
+                <button type="button" className="btn btn-primary" onClick={handleDownload}>
+                  Download PNG
+                </button>
+                <button type="button" className="btn" onClick={handleCopyLink}>
+                  {linkCopied ? 'Link copied ✓' : 'Copy share link'}
+                </button>
+                <button type="button" className="btn" onClick={() => setUnits([])}>
+                  Clear board
+                </button>
+              </div>
+              {exportError && <p className="error-text">{exportError}</p>}
+            </>
+          ) : (
+            <p className="hint-text">Load a team above to generate its trait web.</p>
+          )}
+        </section>
+      </main>
+
+      <footer className="hint-text">
+        Data and icons from CommunityDragon. Traitweb isn’t endorsed by Riot Games. League of
+        Legends and Teamfight Tactics are trademarks of Riot Games, Inc.
+      </footer>
+
+      {pickerUnit && pickerChampion && (
+        <TraitPicker
+          champion={pickerChampion}
+          unit={pickerUnit}
+          traits={data.traits}
+          traitColors={traitColors}
+          onToggle={(trait) => toggleEmblem(pickerUnit.apiName, trait)}
+          onClose={() => setPickerFor(null)}
+        />
+      )}
+    </div>
+  );
+}
