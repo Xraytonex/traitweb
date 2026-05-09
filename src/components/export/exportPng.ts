@@ -93,3 +93,80 @@ export async function renderSceneToCanvas(
     traceEdge(ctx, edge);
   }
   ctx.globalAlpha = 1;
+
+  const badgeR = BADGE_DIAMETER / 2;
+  const glyphSize = BADGE_DIAMETER * BADGE_GLYPH_RATIO;
+  for (const edge of scene.edges) {
+    const color = traitColors.get(edge.trait) ?? FALLBACK_TRAIT_COLOR;
+    const { x, y } = edge.badge;
+    ctx.fillStyle = color.dark;
+    ctx.beginPath();
+    ctx.arc(x, y, badgeR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = color.line;
+    ctx.stroke();
+
+    const trait = traitsByName.get(edge.trait);
+    const glyph = trait ? images.get(trait.icon) : null;
+    if (glyph) {
+      ctx.drawImage(glyph, x - glyphSize / 2, y - glyphSize / 2, glyphSize, glyphSize);
+    }
+  }
+
+  const nodeR = NODE_DIAMETER / 2;
+  for (const node of scene.nodes) {
+    ctx.save();
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+    ctx.shadowBlur = 22;
+    ctx.fillStyle = '#000';
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, nodeR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    const img = images.get(node.champion.icon);
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, nodeR, 0, Math.PI * 2);
+    ctx.clip();
+    if (img) {
+      ctx.drawImage(img, node.x - nodeR, node.y - nodeR, NODE_DIAMETER, NODE_DIAMETER);
+    } else {
+      ctx.fillStyle = costColor(node.champion.cost);
+      ctx.fillRect(node.x - nodeR, node.y - nodeR, NODE_DIAMETER, NODE_DIAMETER);
+    }
+    ctx.restore();
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = NODE_RING_GOLD;
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, nodeR - 1.5, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = NODE_RING_OUTER;
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, nodeR + 1.5, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  return canvas;
+}
+
+export async function downloadScenePng(
+  scene: Scene,
+  traitColors: Map<string, TraitColor>,
+  traitsByName: Map<string, Trait>,
+): Promise<void> {
+  const canvas = await renderSceneToCanvas(scene, traitColors, traitsByName);
+  const blob = await new Promise<Blob | null>((resolve) =>
+    canvas.toBlob(resolve, 'image/png'),
+  );
+  if (!blob) throw new Error('PNG encoding failed.');
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'traitweb.png';
+  link.click();
+  URL.revokeObjectURL(url);
+}
