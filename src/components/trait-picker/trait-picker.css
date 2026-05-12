@@ -1,0 +1,130 @@
+.trait-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 12, 0.75);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  z-index: 20;
+}
+
+.trait-picker {
+  width: min(420px, 100%);
+  max-height: min(580px, 85vh);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #10131f;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-panel);
+  padding: 1.4rem;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+}
+
+.trait-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.trait-picker-header h2 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.trait-picker-close {
+  background: none;
+  border: none;
+  color: var(--color-text-dim);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.1rem 0.4rem;
+  transition: color var(--duration-fast) ease;
+}
+
+.trait-picker-close:hover {
+  color: var(--color-text);
+}
+
+.trait-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trait-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--color-text);
+  text-align: left;
+  font-size: 0.92em;
+  transition:
+    background var(--duration-fast) ease,
+    border-color var(--duration-fast) ease;
+}
+
+.trait-option:hover:not(:disabled),
+.trait-option:focus-visible {
+  background: var(--color-gold-faint);
+}
+
+.trait-option:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
+.trait-option.is-attached {
+  border-color: var(--color-gold-soft);
+  background: var(--color-gold-faint);
+}
+
+.trait-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.trait-badge img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.trait-option-name {
+  flex: 1;
+}
+
+.trait-tag {
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-chip);
+  padding: 0.05rem 0.55rem;
+}
+
+.trait-tag-on {
+  color: var(--color-gold);
+  border-color: var(--color-gold-soft);
+}
