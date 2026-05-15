@@ -1,0 +1,33 @@
+.unit-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem 1.35rem;
+  justify-content: center;
+}
+
+.unit-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 76px;
+}
+
+.unit-icon-btn {
+  padding: 0;
+  background: none;
+  border: 2px solid var(--color-hairline-strong);
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  transition:
+    box-shadow var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-out-expo);
+}
