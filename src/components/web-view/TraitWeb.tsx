@@ -29,3 +29,48 @@ export function TraitWeb({ scene, traitColors, traitsByName }: TraitWebProps) {
   const [failedIcons, setFailedIcons] = useState<ReadonlySet<string>>(new Set());
   const markFailed = (url: string) =>
     setFailedIcons((prev) => (prev.has(url) ? prev : new Set(prev).add(url)));
+
+  const nodeR = NODE_DIAMETER / 2;
+  const badgeR = BADGE_DIAMETER / 2;
+  const glyphSize = BADGE_DIAMETER * BADGE_GLYPH_RATIO;
+
+  return (
+    <svg
+      className="trait-web"
+      viewBox={`0 0 ${scene.size} ${scene.size}`}
+      role="img"
+      aria-label="Trait web visualization"
+    >
+      <defs>
+        <radialGradient id="tw-glow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stopColor="#1c203c" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#1c203c" stopOpacity="0" />
+        </radialGradient>
+        <filter id="tw-node-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="11" />
+        </filter>
+        {scene.nodes.map((node, i) => (
+          <clipPath id={`tw-clip-${i}`} key={node.unit.apiName}>
+            <circle cx={node.x} cy={node.y} r={nodeR} />
+          </clipPath>
+        ))}
+      </defs>
+
+      <rect width={scene.size} height={scene.size} fill="#0a0c18" />
+      <rect width={scene.size} height={scene.size} fill="url(#tw-glow)" />
+
+      <g>
+        {scene.stars.map((star, i) => (
+          <circle key={i} cx={star.x} cy={star.y} r={star.r} fill="#fff" opacity={star.opacity} />
+        ))}
+      </g>
+
+      <g fill="none" strokeWidth={LINE_WIDTH} opacity={EDGE_OPACITY}>
+        {scene.edges.map((edge, i) => (
+          <path
+            key={i}
+            d={edgePath(edge)}
+            stroke={(traitColors.get(edge.trait) ?? FALLBACK_TRAIT_COLOR).line}
+          />
+        ))}
+      </g>
