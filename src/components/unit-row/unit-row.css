@@ -31,3 +31,111 @@
     box-shadow var(--duration-fast) ease,
     transform var(--duration-fast) var(--ease-out-expo);
 }
+
+.unit-icon-btn:hover,
+.unit-icon-btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-gold-faint), 0 0 18px rgba(212, 175, 110, 0.35);
+  transform: translateY(-2px);
+}
+
+.unit-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.unit-icon-fallback {
+  display: block;
+}
+
+.unit-name {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.unit-remove {
+  position: absolute;
+  top: -6px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  border-radius: 50%;
+  border: 1px solid var(--color-hairline);
+  background: var(--color-space);
+  color: var(--color-text-dim);
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease;
+  z-index: 1;
+}
+
+.unit-card:hover .unit-remove,
+.unit-remove:focus-visible {
+  opacity: 1;
+}
+
+.unit-remove:hover {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.emblem-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  min-height: 22px;
+}
+
+.emblem-chip {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  transition: filter var(--duration-fast) ease;
+}
+
+.emblem-chip:hover {
+  filter: brightness(1.6);
+}
+
+.emblem-chip img {
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+
+.emblem-add {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 110, 0.4);
+  background: transparent;
+  color: var(--color-gold);
+  line-height: 1;
+  font-size: 0.85rem;
+  padding: 0;
+  opacity: 0.55;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.unit-card:hover .emblem-add,
+.emblem-add:focus-visible {
+  opacity: 1;
+}
+
+.emblem-add:hover {
+  border-color: var(--color-gold);
+  background: var(--color-gold-faint);
+}
