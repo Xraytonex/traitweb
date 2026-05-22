@@ -74,3 +74,33 @@ export function TraitWeb({ scene, traitColors, traitsByName }: TraitWebProps) {
           />
         ))}
       </g>
+
+      <g>
+        {scene.edges.map((edge, i) => {
+          const color = traitColors.get(edge.trait) ?? FALLBACK_TRAIT_COLOR;
+          const trait = traitsByName.get(edge.trait);
+          const showGlyph = trait && !failedIcons.has(trait.icon);
+          return (
+            <g key={i}>
+              <circle
+                cx={edge.badge.x}
+                cy={edge.badge.y}
+                r={badgeR}
+                fill={color.dark}
+                stroke={color.line}
+                strokeWidth={2}
+              />
+              {showGlyph && (
+                <image
+                  href={trait.icon}
+                  x={edge.badge.x - glyphSize / 2}
+                  y={edge.badge.y - glyphSize / 2}
+                  width={glyphSize}
+                  height={glyphSize}
+                  onError={() => markFailed(trait.icon)}
+                />
+              )}
+            </g>
+          );
+        })}
+      </g>
