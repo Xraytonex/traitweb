@@ -104,3 +104,54 @@ export function TraitWeb({ scene, traitColors, traitsByName }: TraitWebProps) {
           );
         })}
       </g>
+
+      <g>
+        {scene.nodes.map((node, i) => {
+          const failed = failedIcons.has(node.champion.icon);
+          return (
+            <g key={node.unit.apiName}>
+              <circle
+                cx={node.x}
+                cy={node.y}
+                r={nodeR}
+                fill="#000"
+                opacity={0.9}
+                filter="url(#tw-node-glow)"
+              />
+              {failed ? (
+                <circle cx={node.x} cy={node.y} r={nodeR} fill={costColor(node.champion.cost)} />
+              ) : (
+                <image
+                  href={node.champion.icon}
+                  x={node.x - nodeR}
+                  y={node.y - nodeR}
+                  width={NODE_DIAMETER}
+                  height={NODE_DIAMETER}
+                  clipPath={`url(#tw-clip-${i})`}
+                  preserveAspectRatio="xMidYMid slice"
+                  onError={() => markFailed(node.champion.icon)}
+                />
+              )}
+              <circle
+                cx={node.x}
+                cy={node.y}
+                r={nodeR - 1.5}
+                fill="none"
+                stroke="#d4af6e"
+                strokeWidth={3}
+              />
+              <circle
+                cx={node.x}
+                cy={node.y}
+                r={nodeR + 1.5}
+                fill="none"
+                stroke="#6e5527"
+                strokeWidth={2}
+              />
+            </g>
+          );
+        })}
+      </g>
+    </svg>
+  );
+}
