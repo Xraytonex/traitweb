@@ -1,0 +1,931 @@
+{
+  "setNumber": 17,
+  "champions": [
+    {
+      "apiName": "TFT17_Aatrox",
+      "name": "Aatrox",
+      "cost": 1,
+      "traits": [
+        "N.O.V.A.",
+        "Bastion"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_aatrox/hud/tft17_aatrox_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Briar",
+      "name": "Briar",
+      "cost": 1,
+      "traits": [
+        "Anima",
+        "Primordian",
+        "Rogue"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_briar/hud/tft17_briar_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Caitlyn",
+      "name": "Caitlyn",
+      "cost": 1,
+      "traits": [
+        "N.O.V.A.",
+        "Fateweaver"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_caitlyn/hud/tft17_caitlyn_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Chogath",
+      "name": "Cho'Gath",
+      "cost": 1,
+      "traits": [
+        "Dark Star",
+        "Brawler"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_chogath/hud/tft17_chogath_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Ezreal",
+      "name": "Ezreal",
+      "cost": 1,
+      "traits": [
+        "Timebreaker",
+        "Sniper"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_ezreal/hud/tft17_ezreal_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Leona",
+      "name": "Leona",
+      "cost": 1,
+      "traits": [
+        "Arbiter",
+        "Vanguard"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_leona/hud/tft17_leona_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Lissandra",
+      "name": "Lissandra",
+      "cost": 1,
+      "traits": [
+        "Dark Star",
+        "Shepherd",
+        "Replicator"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_lissandra/hud/tft17_lissandra_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Nasus",
+      "name": "Nasus",
+      "cost": 1,
+      "traits": [
+        "Space Groove",
+        "Vanguard"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_nasus/hud/tft17_nasus_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Poppy",
+      "name": "Poppy",
+      "cost": 1,
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_poppy/hud/tft17_poppy_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_RekSai",
+      "name": "Rek'Sai",
+      "cost": 1,
+      "traits": [
+        "Primordian",
+        "Brawler"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_reksai/hud/tft17_reksai_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Talon",
+      "name": "Talon",
+      "cost": 1,
+      "traits": [
+        "Stargazer",
+        "Rogue"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_talon/hud/tft17_talon_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Teemo",
+      "name": "Teemo",
+      "cost": 1,
+      "traits": [
+        "Space Groove",
+        "Shepherd"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_teemo/hud/tft17_teemo_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_TwistedFate",
+      "name": "Twisted Fate",
+      "cost": 1,
+      "traits": [
+        "Stargazer",
+        "Fateweaver"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_twistedfate/hud/tft17_twistedfate_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Veigar",
+      "name": "Veigar",
+      "cost": 1,
+      "traits": [
+        "Meeple",
+        "Replicator"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_veigar/hud/tft17_veigar_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Akali",
+      "name": "Akali",
+      "cost": 2,
+      "traits": [
+        "N.O.V.A.",
+        "Marauder"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_akali/hud/tft17_akali_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Belveth",
+      "name": "Bel'Veth",
+      "cost": 2,
+      "traits": [
+        "Primordian",
+        "Challenger",
+        "Marauder"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_belveth/hud/tft17_belveth_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Gnar",
+      "name": "Gnar",
+      "cost": 2,
+      "traits": [
+        "Meeple",
+        "Sniper"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_gnar/hud/tft17_gnar_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Gragas",
+      "name": "Gragas",
+      "cost": 2,
+      "traits": [
+        "Psionic",
+        "Brawler"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_gragas/hud/tft17_gragas_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Gwen",
+      "name": "Gwen",
+      "cost": 2,
+      "traits": [
+        "Space Groove",
+        "Rogue"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_gwen/hud/tft17_gwen_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Jax",
+      "name": "Jax",
+      "cost": 2,
+      "traits": [
+        "Stargazer",
+        "Bastion"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_jax/hud/tft17_jax_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Jinx",
+      "name": "Jinx",
+      "cost": 2,
+      "traits": [
+        "Anima",
+        "Challenger"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_jinx/hud/tft17_jinx_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_IvernMinion",
+      "name": "Meepsie",
+      "cost": 2,
+      "traits": [
+        "Meeple",
+        "Shepherd",
+        "Voyager"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_ivernminion/hud/tft17_ivernminion_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Milio",
+      "name": "Milio",
+      "cost": 2,
+      "traits": [
+        "Timebreaker",
+        "Fateweaver"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_milio/hud/tft17_milio_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Mordekaiser",
+      "name": "Mordekaiser",
+      "cost": 2,
+      "traits": [
+        "Dark Star",
+        "Conduit",
+        "Vanguard"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_mordekaiser/hud/tft17_mordekaiser_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Pantheon",
+      "name": "Pantheon",
+      "cost": 2,
+      "traits": [
+        "Timebreaker",
+        "Brawler",
+        "Replicator"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_pantheon/hud/tft17_pantheon_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Pyke",
+      "name": "Pyke",
+      "cost": 2,
+      "traits": [
+        "Psionic",
+        "Voyager"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_pyke/hud/tft17_pyke_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Zoe",
+      "name": "Zoe",
+      "cost": 2,
+      "traits": [
+        "Arbiter",
+        "Conduit"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_zoe/hud/tft17_zoe_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Aurora",
+      "name": "Aurora",
+      "cost": 3,
+      "traits": [
+        "Anima",
+        "Voyager"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_aurora/hud/tft17_aurora_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Diana",
+      "name": "Diana",
+      "cost": 3,
+      "traits": [
+        "Arbiter",
+        "Challenger"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/patching/tft17_diana_teamplanner_splash.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Fizz",
+      "name": "Fizz",
+      "cost": 3,
+      "traits": [
+        "Meeple",
+        "Rogue"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_fizz/hud/tft17_fizz_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Illaoi",
+      "name": "Illaoi",
+      "cost": 3,
+      "traits": [
+        "Anima",
+        "Vanguard",
+        "Shepherd"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_illaoi/hud/tft17_illaoi_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Kaisa",
+      "name": "Kai'Sa",
+      "cost": 3,
+      "traits": [
+        "Dark Star",
+        "Rogue"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_kaisa/hud/tft17_kaisa_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Lulu",
+      "name": "Lulu",
+      "cost": 3,
+      "traits": [
+        "Stargazer",
+        "Replicator"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_lulu/hud/tft17_lulu_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Maokai",
+      "name": "Maokai",
+      "cost": 3,
+      "traits": [
+        "N.O.V.A.",
+        "Brawler"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_maokai/hud/tft17_maokai_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_MissFortune",
+      "name": "Miss Fortune",
+      "cost": 3,
+      "traits": [
+        "Gun Goddess",
+        "Choose Trait"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_missfortune/hud/tft17_missfortune_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Ornn",
+      "name": "Ornn",
+      "cost": 3,
+      "traits": [
+        "Space Groove",
+        "Bastion"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_ornn/hud/tft17_ornn_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Rhaast",
+      "name": "Rhaast",
+      "cost": 3,
+      "traits": [
+        "Redeemer"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_rhaast/hud/tft17_kayn_slay_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Samira",
+      "name": "Samira",
+      "cost": 3,
+      "traits": [
+        "Space Groove",
+        "Sniper"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_samira/hud/tft17_samira_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Urgot",
+      "name": "Urgot",
+      "cost": 3,
+      "traits": [
+        "Mecha",
+        "Brawler",
+        "Marauder"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_urgot/hud/tft17_urgot_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Viktor",
+      "name": "Viktor",
+      "cost": 3,
+      "traits": [
+        "Psionic",
+        "Conduit"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_viktor/hud/tft17_viktor_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_AurelionSol",
+      "name": "Aurelion Sol",
+      "cost": 4,
+      "traits": [
+        "Mecha",
+        "Conduit"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_aurelionsol/hud/tft17_aurelionsol_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Corki",
+      "name": "Corki",
+      "cost": 4,
+      "traits": [
+        "Meeple",
+        "Fateweaver"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_corki/hud/tft17_corki_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Karma",
+      "name": "Karma",
+      "cost": 4,
+      "traits": [
+        "Dark Star",
+        "Voyager"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_karma/hud/tft17_karma_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Kindred",
+      "name": "Kindred",
+      "cost": 4,
+      "traits": [
+        "N.O.V.A.",
+        "Challenger"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_kindred/hud/tft17_kindred_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Leblanc",
+      "name": "LeBlanc",
+      "cost": 4,
+      "traits": [
+        "Arbiter",
+        "Shepherd"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_leblanc/hud/tft17_leblanc_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_MasterYi",
+      "name": "Master Yi",
+      "cost": 4,
+      "traits": [
+        "Psionic",
+        "Marauder"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_masteryi/hud/tft17_masteryi_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Morgana",
+      "name": "Morgana",
+      "cost": 4,
+      "traits": [
+        "Dark Lady"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_morgana/hud/tft17_morgana_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Nami",
+      "name": "Nami",
+      "cost": 4,
+      "traits": [
+        "Space Groove",
+        "Replicator"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_nami/hud/tft17_nami_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Nunu",
+      "name": "Nunu & Willump",
+      "cost": 4,
+      "traits": [
+        "Stargazer",
+        "Vanguard"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_nunu/hud/tft17_nunu_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Rammus",
+      "name": "Rammus",
+      "cost": 4,
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_rammus/hud/tft17_rammus_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Riven",
+      "name": "Riven",
+      "cost": 4,
+      "traits": [
+        "Timebreaker",
+        "Rogue"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_riven/hud/tft17_riven_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_TahmKench",
+      "name": "Tahm Kench",
+      "cost": 4,
+      "traits": [
+        "Oracle",
+        "Brawler"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_tahmkench/hud/tft17_tahmkench_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Galio",
+      "name": "The Mighty Mech",
+      "cost": 4,
+      "traits": [
+        "Mecha",
+        "Voyager"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_galio/hud/tft17_galio_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Xayah",
+      "name": "Xayah",
+      "cost": 4,
+      "traits": [
+        "Stargazer",
+        "Sniper"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_xayah/hud/tft17_xayah_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Bard",
+      "name": "Bard",
+      "cost": 5,
+      "traits": [
+        "Meeple",
+        "Conduit"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_bard/hud/tft17_bard_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Blitzcrank",
+      "name": "Blitzcrank",
+      "cost": 5,
+      "traits": [
+        "Party Animal",
+        "Space Groove",
+        "Vanguard"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_blitzcrank/hud/tft17_blitzcrank_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Fiora",
+      "name": "Fiora",
+      "cost": 5,
+      "traits": [
+        "Divine Duelist",
+        "Anima",
+        "Marauder"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_fiora/hud/tft17_fiora_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Graves",
+      "name": "Graves",
+      "cost": 5,
+      "traits": [
+        "Factory New"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_graves/hud/tft17_graves_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Jhin",
+      "name": "Jhin",
+      "cost": 5,
+      "traits": [
+        "Dark Star",
+        "Eradicator",
+        "Sniper"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_jhin/hud/tft17_jhin_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Shen",
+      "name": "Shen",
+      "cost": 5,
+      "traits": [
+        "Bulwark",
+        "Bastion"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_shen/hud/tft17_shen_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Sona",
+      "name": "Sona",
+      "cost": 5,
+      "traits": [
+        "Commander",
+        "Psionic",
+        "Shepherd"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_sona/hud/tft17_sona_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Vex",
+      "name": "Vex",
+      "cost": 5,
+      "traits": [
+        "Doomer"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_vex/hud/tft17_vex_square.tft_set17.png"
+    },
+    {
+      "apiName": "TFT17_Zed",
+      "name": "Zed",
+      "cost": 5,
+      "traits": [
+        "Galaxy Hunter"
+      ],
+      "icon": "https://raw.communitydragon.org/latest/game/assets/characters/tft17_zed/hud/tft17_zed_square.tft_set17.png"
+    }
+  ],
+  "traits": [
+    {
+      "apiName": "TFT17_AnimaSquad",
+      "name": "Anima",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_animatech.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_ADMIN",
+      "name": "Arbiter",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_arbiter.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_ResistTank",
+      "name": "Bastion",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_9_bastion.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_HPTank",
+      "name": "Brawler",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_brawler.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_ShenUniqueTrait",
+      "name": "Bulwark",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_bulwark.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_ASTrait",
+      "name": "Challenger",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_challenger.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_MissFortuneUndeterminedTrait",
+      "name": "Choose Trait",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_missfortuneundetermindedtrait.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_SonaUniqueTrait",
+      "name": "Commander",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_commander.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_ManaTrait",
+      "name": "Conduit",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_channeler.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_MorganaUniqueTrait",
+      "name": "Dark Lady",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_darklady.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_DarkStar",
+      "name": "Dark Star",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_darkstar.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_FioraUniqueTrait",
+      "name": "Divine Duelist",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_divineduelist.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_VexUniqueTrait",
+      "name": "Doomer",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_doomer.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_JhinUniqueTrait",
+      "name": "Eradicator",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_singularity.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_GravesTrait",
+      "name": "Factory New",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_factorynew.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_Fateweaver",
+      "name": "Fateweaver",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_fateweaver.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_ZedUniqueTrait",
+      "name": "Galaxy Hunter",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_galaxyhunter.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "Set17_CarouselMarket_EmpoweredHexTrait",
+      "name": "God-Blessed",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_godblessed.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_MissFortuneUniqueTrait",
+      "name": "Gun Goddess",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_gungoddess.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_MeleeTrait",
+      "name": "Marauder",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_16_slayer.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_Mecha",
+      "name": "Mecha",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_mecha.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_Astronaut",
+      "name": "Meeple",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_astronaut.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_DRX",
+      "name": "N.O.V.A.",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_nova.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_TahmKenchUniqueTrait",
+      "name": "Oracle",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_12_arcana.tft_set12.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_BlitzcrankUniqueTrait",
+      "name": "Party Animal",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_partyanimal.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_Primordian",
+      "name": "Primordian",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_primordian.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_PsyOps",
+      "name": "Psionic",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_psyops.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_RhaastUniqueTrait",
+      "name": "Redeemer",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_redeemer.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_APTrait",
+      "name": "Replicator",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_replicator.tft_set17.png",
+      "hasEmblem": false
+    },
+    {
+      "apiName": "TFT17_AssassinTrait",
+      "name": "Rogue",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_rogue.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_SummonTrait",
+      "name": "Shepherd",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_shepherd.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_RangedTrait",
+      "name": "Sniper",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_6_sniper.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_SpaceGroove",
+      "name": "Space Groove",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_spacegroove.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_Stargazer",
+      "name": "Stargazer",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_stargazer.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_Timebreaker",
+      "name": "Timebreaker",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_timebreaker.tft_set17.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_ShieldTank",
+      "name": "Vanguard",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_12_vanguard.tft_set12.png",
+      "hasEmblem": true
+    },
+    {
+      "apiName": "TFT17_FlexTrait",
+      "name": "Voyager",
+      "icon": "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_17_voyager.tft_set17.png",
+      "hasEmblem": true
+    }
+  ],
+  "plannerMap": {
+    "1": "TFT17_MissFortune",
+    "13": "TFT17_Akali",
+    "14": "TFT17_Briar",
+    "15": "TFT17_Belveth",
+    "16": "TFT17_Aurora",
+    "17": "TFT17_Illaoi",
+    "18": "TFT17_Jinx",
+    "19": "TFT17_Fiora",
+    "20": "TFT17_IvernMinion",
+    "21": "TFT17_Fizz",
+    "22": "TFT17_Veigar",
+    "23": "TFT17_Gnar",
+    "24": "TFT17_Rammus",
+    "25": "TFT17_Corki",
+    "26": "TFT17_Poppy",
+    "27": "TFT17_Caitlyn",
+    "28": "TFT17_Bard",
+    "29": "TFT17_Aatrox",
+    "30": "TFT17_Maokai",
+    "31": "TFT17_Kindred",
+    "32": "TFT17_Kaisa",
+    "33": "TFT17_Rhaast",
+    "34": "TFT17_Karma",
+    "35": "TFT17_Jhin",
+    "36": "TFT17_Urgot",
+    "37": "TFT17_Pantheon",
+    "38": "TFT17_AurelionSol",
+    "39": "TFT17_Galio",
+    "41": "TFT17_Sona",
+    "42": "TFT17_Talon",
+    "43": "TFT17_TwistedFate",
+    "44": "TFT17_Jax",
+    "45": "TFT17_Pyke",
+    "46": "TFT17_Viktor",
+    "47": "TFT17_MasterYi",
+    "48": "TFT17_Lulu",
+    "49": "TFT17_Gragas",
+    "50": "TFT17_Samira",
+    "51": "TFT17_Teemo",
+    "52": "TFT17_Nasus",
+    "53": "TFT17_Gwen",
+    "54": "TFT17_Ornn",
+    "55": "TFT17_Nami",
+    "56": "TFT17_Blitzcrank",
+    "57": "TFT17_Nunu",
+    "58": "TFT17_Vex",
+    "59": "TFT17_Shen",
+    "60": "TFT17_Riven",
+    "61": "TFT17_Milio",
+    "62": "TFT17_Ezreal",
+    "63": "TFT17_Xayah",
+    "65": "TFT17_Zoe",
+    "66": "TFT17_Leona",
+    "67": "TFT17_Diana",
+    "68": "TFT17_Leblanc",
+    "69": "TFT17_Chogath",
+    "70": "TFT17_Lissandra",
+    "71": "TFT17_Zed",
+    "78": "TFT17_Mordekaiser",
+    "79": "TFT17_TahmKench",
+    "80": "TFT17_Graves",
+    "88": "TFT17_Morgana",
+    "104": "TFT17_RekSai"
+  }
+}
