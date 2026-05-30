@@ -122,3 +122,103 @@ function placeBadge(
   for (let step = BADGE_T_STEP; step <= BADGE_T_MAX_OFFSET + 1e-9; step += BADGE_T_STEP) {
     candidates.push(0.5 + step, 0.5 - step);
   }
+
+  let bestPoint: Pt | null = null;
+  let bestScore = -Infinity;
+  for (const t of candidates) {
+    const p = pointOnEdge(edge, t);
+    const badgeClear = placedBadges.length
+      ? Math.min(...placedBadges.map((b) => dist(p, b))) / BADGE_MIN_GAP
+      : Infinity;
+    const nodeClear = nodes.length
+      ? Math.min(...nodes.map((nd) => dist(p, nd))) / NODE_CLEARANCE
+      : Infinity;
+    const score = Math.min(badgeClear, nodeClear);
+    if (score >= 1) return p;
+    if (score > bestScore) {
+      bestScore = score;
+      bestPoint = p;
+    }
+  }
+  return bestPoint ?? pointOnEdge(edge, 0.5);
+}
+
+function buildStars(size: number): SceneStar[] {
+  const rand = mulberry32(STAR_SEED);
+  const stars: SceneStar[] = [];
+  for (let i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+      x: rand() * size,
+      y: rand() * size,
+      r: 0.25 + rand() * 0.95,
+      opacity: 0.1 + rand() * 0.55,
+    });
+  }
+  return stars;
+}
+
+export function buildScene(
+  units: UnitState[],
+  championsByApiName: Map<string, Champion>,
+): Scene {
+  const size = CANVAS_SIZE;
+  const center: Pt = { x: size / 2, y: size / 2 };
+
+  const resolved = units.filter((u) => championsByApiName.has(u.apiName));
+  const champions = resolved.map((u) => championsByApiName.get(u.apiName) as Champion);
+  const traitSets = resolved.map((u, i) => effectiveTraits(u, champions[i]));
+
+  const order = orderUnits(resolved, traitSets);
+  const n = order.length;
+
+  const nodes: SceneNode[] = order.map((unitIdx, ringIdx) => {
+    if (n === 1) {
+      return { ...center, unit: resolved[unitIdx], champion: champions[unitIdx] };
+    }
+    const angle = -Math.PI / 2 + (ringIdx * 2 * Math.PI) / n;
+    return {
+      x: center.x + RING_RADIUS * Math.cos(angle),
+      y: center.y + RING_RADIUS * Math.sin(angle),
+      unit: resolved[unitIdx],
+      champion: champions[unitIdx],
+    };
+  });
+  const ringTraitSets = order.map((unitIdx) => traitSets[unitIdx]);
+
+  const edges: SceneEdge[] = [];
+  const webTraits = new Set<string>();
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      const shared = sharedTraits(ringTraitSets[i], ringTraitSets[j]);
+      if (shared.length === 0) continue;
+
+      const a = nodes[i];
+      const b = nodes[j];
+      const chord = dist(a, b);
+      if (chord === 0) continue;
+
+      const dir = { x: (b.x - a.x) / chord, y: (b.y - a.y) / chord };
+      let perp = { x: -dir.y, y: dir.x };
+      const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      if (perp.x * (mid.x - center.x) + perp.y * (mid.y - center.y) < 0) {
+        perp = { x: -perp.x, y: -perp.y };
+      }
+
+      const adjacent = n <= 2 || j - i === 1 || (i === 0 && j === n - 1);
+
+      shared.forEach((trait, k) => {
+        webTraits.add(trait);
+        const offset = (k - (shared.length - 1) / 2) * PARALLEL_SPACING;
+        const p0 = { x: a.x + perp.x * offset, y: a.y + perp.y * offset };
+        const p1 = { x: b.x + perp.x * offset, y: b.y + perp.y * offset };
+        const control = adjacent
+          ? null
+          : {
+              x: mid.x + perp.x * (BOW_FACTOR * chord + offset),
+              y: mid.y + perp.y * (BOW_FACTOR * chord + offset),
+            };
+        edges.push({ p0, p1, control, trait, badge: { x: 0, y: 0 } });
+      });
+    }
+  }
