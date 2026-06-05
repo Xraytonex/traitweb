@@ -222,3 +222,21 @@ export function buildScene(
       });
     }
   }
+
+  const nodePoints: Pt[] = nodes.map((nd) => ({ x: nd.x, y: nd.y }));
+  const placed: Pt[] = [];
+  const byLength = [...edges].sort((e1, e2) => dist(e2.p0, e2.p1) - dist(e1.p0, e1.p1));
+  for (const edge of byLength) {
+    const badge = placeBadge(edge, placed, nodePoints);
+    edge.badge = badge;
+    placed.push(badge);
+  }
+
+  return {
+    size,
+    nodes,
+    edges,
+    stars: buildStars(size),
+    webTraits: [...webTraits].sort(),
+  };
+}
