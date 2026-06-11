@@ -31,3 +31,45 @@ export function parseTeamCode(raw: string, data: SetData): ParsedTeamCode {
         '".',
     };
   }
+
+  const codeSet = Number(suffix[1]);
+  if (codeSet !== data.setNumber) {
+    return {
+      units: [],
+      failedChunks: [],
+      error: `This code is for Set ${codeSet}, but this app supports Set ${data.setNumber}.`,
+    };
+  }
+
+  const body = compact.slice(0, suffix.index);
+  if (body.length <= VERSION_LENGTH) {
+    return { units: [], failedChunks: [], error: 'Team code is too short to contain any units.' };
+  }
+
+  const payload = body.slice(VERSION_LENGTH);
+  const chunks = payload.match(new RegExp(`.{1,${CHUNK_LENGTH}}`, 'g')) ?? [];
+
+  const units: string[] = [];
+  const failedChunks: string[] = [];
+  for (const chunk of chunks) {
+    if (chunk === EMPTY_SLOT) continue;
+    const code = chunk.length === CHUNK_LENGTH ? parseInt(chunk, 16) : NaN;
+    const apiName = Number.isNaN(code) ? undefined : data.plannerMap[String(code)];
+    if (!apiName) {
+      failedChunks.push(chunk);
+      continue;
+    }
+    if (!units.includes(apiName) && units.length < MAX_UNITS) {
+      units.push(apiName);
+    }
+  }
+
+  if (units.length === 0) {
+    return {
+      units,
+      failedChunks,
+      error: 'No units could be resolved from that code.',
+    };
+  }
+  return { units, failedChunks };
+}
