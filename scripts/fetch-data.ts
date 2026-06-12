@@ -86,3 +86,58 @@ async function main() {
       emblemTraitNames.add(item.name.slice(0, -EMBLEM_SUFFIX.length));
     }
   }
+
+  // Variant records (e.g. Stargazer_*) share a display name; keep the base one.
+  const traitByName = new Map<string, RawTrait>();
+  for (const t of set.traits) {
+    if (t.icon == null) continue;
+    const existing = traitByName.get(t.name);
+    if (!existing || t.apiName.length < existing.apiName.length) {
+      traitByName.set(t.name, t);
+    }
+  }
+  const traits = [...traitByName.values()]
+    .map((t) => ({
+      apiName: t.apiName,
+      name: t.name,
+      icon: iconUrl(t.icon as string),
+      hasEmblem: emblemTraitNames.has(t.name),
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const planner = await fetchJson<Record<string, PlannerEntry[]>>(PLANNER_URL);
+  const plannerSet = planner[`TFTSet${SET_NUMBER}`];
+  if (!plannerSet) {
+    throw new Error(
+      `TFTSet${SET_NUMBER} not found in team planner data. Available: ${Object.keys(planner).join(', ')}`,
+    );
+  }
+
+  const championNames = new Set(champions.map((c) => c.apiName));
+  const plannerMap: Record<string, string> = {};
+  for (const entry of plannerSet) {
+    if (entry.team_planner_code > 0 && championNames.has(entry.character_id)) {
+      plannerMap[String(entry.team_planner_code)] = entry.character_id;
+    }
+  }
+
+  const mapped = Object.keys(plannerMap).length;
+  if (mapped === 0) {
+    throw new Error('Planner map is empty — planner data format may have changed.');
+  }
+
+  const out = { setNumber: SET_NUMBER, champions, traits, plannerMap };
+  const dataDir = join(process.cwd(), 'src/data');
+  mkdirSync(dataDir, { recursive: true });
+  writeFileSync(join(dataDir, 'set-data.json'), JSON.stringify(out, null, 2));
+
+  console.log(
+    `Wrote src/data/set-data.json: ${champions.length} champions, ${traits.length} traits ` +
+      `(${traits.filter((t) => t.hasEmblem).length} with emblems), ${mapped} planner codes.`,
+  );
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
